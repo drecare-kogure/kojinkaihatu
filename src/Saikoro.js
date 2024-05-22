@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Saikoro.css'; // スタイルシートのインポート
+import './Saikoro.css';
 
 function RandomNumberGenerator() {
   const [randomNumber, setRandomNumber] = useState(null);
