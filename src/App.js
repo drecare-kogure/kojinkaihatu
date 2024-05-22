@@ -1,5 +1,4 @@
 import './App.css';
-import ToDoList from './ToDoList';
 import Saikoro from './Saikoro';
 
 function App() {
