@@ -35,11 +35,12 @@ function MessageBoard() {
 
   return (
     <div className="message-board-container">
-      <h1>つぶログ</h1>
+      <h1>テキストリスト</h1>
       <div>
         {messages.map((message, index) => (
-          <div key={index}>
-            <div>{message.time}</div> {/* 送信時の時間を表示 */}
+          <div key={index}><div>
+            <div className='messageTime'>{message.time}</div> {/* 送信時の時間を表示 */}
+            </div>
             {/* テキストを <br> タグに置き換えて表示 */}
             {message.text.split('\n').map((line, lineIndex) => (
               <React.Fragment key={lineIndex}>
@@ -48,6 +49,7 @@ function MessageBoard() {
               </React.Fragment>
             ))}
             <button className="delete-button" onClick={() => handleDeleteMessage(index)}>Delete</button>
+            <hr/>
           </div>
         ))}
       </div>
@@ -56,10 +58,10 @@ function MessageBoard() {
           ref={textareaRef}
           value={inputText}
           onChange={(e) => { setInputText(e.target.value); handleTextareaChange(); }} // テキストが変更されたときに高さを調整
-          placeholder="Type your message here"
+          placeholder="メッセージ"
           className="message-textarea"
         />
-        <button type="submit" className="message-button" disabled={!inputText.trim()}>Send</button> {/* 空白のみの場合は無効化 */}
+        <button type="submit" className="message-button" disabled={!inputText.trim()}>送信</button> {/* 空白のみの場合は無効化 */}
       </form>
     </div>
   );

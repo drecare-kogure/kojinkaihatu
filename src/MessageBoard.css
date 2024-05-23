@@ -1,19 +1,27 @@
+h1{
+  background-color: #9792ff;
+  padding: 20px;
+}
+
+.messageTime{
+  background-color: rgb(219, 219, 219);
+  padding: 2px 5px; /* 背景色の周りに余白を追加 */
+  border-radius: 3px; /* 角丸にする */
+  display: inline-block;
+  overflow: hidden;
+}
+
 .message-board-container {
     max-width: 800px; /* コンテナの最大幅を設定 */
     margin: 0 auto; /* 中央に配置 */
     padding: 20px;
   }
-
-.message-row {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
+ 
   
   .delete-button {
     margin-left: 10px;
     padding: 5px 10px;
-    background-color: #ff3333;
+    background-color: #351ec7;
     color: white;
     border: none;
     border-radius: 5px;
@@ -26,15 +34,19 @@
   
   .message-form {
     display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
   
   .message-textarea {
     flex: 1; /* 入力フィールドが残りのスペースを占めるようにする */
     padding: 10px;
     margin-right: 10px;
-    resize: none; /*リサイズの無効化*/
-  overflow-y: auto; /* 高さが制限された場合に縦方向のスクロールバーを表示 */
-  word-wrap: break-word; /* フォームの幅を超える場合に文字列を折り返す */
+      resize: none; /*リサイズの無効化*/
+    overflow-y: auto; /* 高さが制限された場合に縦方向のスクロールバーを表示 */
+    word-wrap: break-word; /* フォームの幅を超える場合に文字列を折り返す */
   }
   
   .message-button {
