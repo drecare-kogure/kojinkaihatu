@@ -1,0 +1,37 @@
+.full-width {
+    width: 100%;
+  }
+  
+  .no-resize {
+    resize: none;
+    overflow-y: auto; /* テキストがオーバーした場合に縦方向のスクロールバーを表示 */
+  }
+  
+  .image-preview {
+    display: flex;
+    overflow-x: auto; /* 画像が画面幅を超える場合に横方向のスクロールバーを表示 */
+  }
+  
+  .image-preview img {
+    height: 200px;
+    max-width: 100%;
+    margin-right: 10px; /* 画像間のスペースを追加 */
+  }
+  
+  
+  
+  .image-list-container {
+    overflow-x: auto; /* 画像リストが画面幅を超える場合に横方向のスクロールバーを表示 */
+  }
+  
+  .image-list {
+    display: flex; /* 画像を横並びにするために追加 */
+    flex-wrap: nowrap; /* 画像が横一列に並ぶようにするために追加 */
+    padding: 0; /* デフォルトのリストスタイルを除去 */
+    list-style-type: none; /* デフォルトのリストスタイルを除去 */
+  }
+  
+  .image-list li {
+    margin-right: 10px; /* 画像間のスペースを追加 */
+  }
+  

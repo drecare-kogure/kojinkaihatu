@@ -1,19 +1,68 @@
-import './App.css';
-import Saikoro from './Saikoro';
+import React, { useState, useRef } from 'react';
+import './MessageBoard.css'; // CSSファイルのインポート
 
-function App() {
+function MessageBoard() {
+  const [inputText, setInputText] = useState('');
+  const [messages, setMessages] = useState([]);
+  const textareaRef = useRef(null); // textareaの参照を作成
+
+  const handleTextareaChange = () => {
+    // textareaの高さを内容に合わせて調整
+    const textarea = textareaRef.current;
+    if (textarea) {
+      textarea.style.height = 'auto'; // 初期化
+      textarea.style.height = `${textarea.scrollHeight}px`; // スクロール高さを設定
+    }
+  };
+
+  const handleMessageSubmit = (e) => {
+    e.preventDefault();
+    if (inputText.trim() !== '') {
+      const currentTime = new Date().toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' }); // 時と分のみを取得
+      setMessages([...messages, { text: inputText, time: currentTime }]);
+      setInputText('');
+    }
+  };
+
+  const handleDeleteMessage = (index) => {
+    const confirmDelete = window.confirm('このメッセージを削除しますか？');
+    if (confirmDelete) {
+      const newMessages = [...messages];
+      newMessages.splice(index, 1);
+      setMessages(newMessages);
+    }
+  };
+
   return (
-    <div >
-      <header className="h1 text-white bg-primary p-2 mb-4">
-        Random Number Generator
-      </header>
-      <body>
-        <div className='container'>
-          <Saikoro />
-        </div>
-      </body>
+    <div className="message-board-container">
+      <h1>つぶログ</h1>
+      <div>
+        {messages.map((message, index) => (
+          <div key={index}>
+            <div>{message.time}</div> {/* 送信時の時間を表示 */}
+            {/* テキストを <br> タグに置き換えて表示 */}
+            {message.text.split('\n').map((line, lineIndex) => (
+              <React.Fragment key={lineIndex}>
+                {lineIndex > 0 && <br />}
+                {line}
+              </React.Fragment>
+            ))}
+            <button className="delete-button" onClick={() => handleDeleteMessage(index)}>Delete</button>
+          </div>
+        ))}
+      </div>
+      <form onSubmit={handleMessageSubmit} className="message-form">
+        <textarea
+          ref={textareaRef}
+          value={inputText}
+          onChange={(e) => { setInputText(e.target.value); handleTextareaChange(); }} // テキストが変更されたときに高さを調整
+          placeholder="Type your message here"
+          className="message-textarea"
+        />
+        <button type="submit" className="message-button" disabled={!inputText.trim()}>Send</button> {/* 空白のみの場合は無効化 */}
+      </form>
     </div>
   );
 }
 
-export default App;
+export default MessageBoard;

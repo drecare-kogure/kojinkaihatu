@@ -1,0 +1,44 @@
+.message-board-container {
+    max-width: 800px; /* コンテナの最大幅を設定 */
+    margin: 0 auto; /* 中央に配置 */
+    padding: 20px;
+  }
+
+.message-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .delete-button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #ff3333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .delete-button:hover {
+    background-color: #cc0000;
+  }
+  
+  .message-form {
+    display: flex;
+  }
+  
+  .message-textarea {
+    flex: 1; /* 入力フィールドが残りのスペースを占めるようにする */
+    padding: 10px;
+    margin-right: 10px;
+    resize: none; /*リサイズの無効化*/
+  overflow-y: auto; /* 高さが制限された場合に縦方向のスクロールバーを表示 */
+  word-wrap: break-word; /* フォームの幅を超える場合に文字列を折り返す */
+  }
+  
+  .message-button {
+    flex-shrink: 0; /* ボタンが幅を自動調整しないようにする */
+    padding: 10px 20px;
+  }
+  
