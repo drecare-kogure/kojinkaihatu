@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 h1{
   background-color: #9792ff;
   padding: 20px;
@@ -11,17 +12,32 @@ h1{
   overflow: hidden;
 }
 
+=======
+>>>>>>> b1a2be40b368cb11c062626d12e3386a0d71eb4e
 .message-board-container {
     max-width: 800px; /* コンテナの最大幅を設定 */
     margin: 0 auto; /* 中央に配置 */
     padding: 20px;
   }
+<<<<<<< HEAD
  
+=======
+
+.message-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+>>>>>>> b1a2be40b368cb11c062626d12e3386a0d71eb4e
   
   .delete-button {
     margin-left: 10px;
     padding: 5px 10px;
+<<<<<<< HEAD
     background-color: #351ec7;
+=======
+    background-color: #ff3333;
+>>>>>>> b1a2be40b368cb11c062626d12e3386a0d71eb4e
     color: white;
     border: none;
     border-radius: 5px;
@@ -34,19 +50,28 @@ h1{
   
   .message-form {
     display: flex;
+<<<<<<< HEAD
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
+=======
+>>>>>>> b1a2be40b368cb11c062626d12e3386a0d71eb4e
   }
   
   .message-textarea {
     flex: 1; /* 入力フィールドが残りのスペースを占めるようにする */
     padding: 10px;
     margin-right: 10px;
+<<<<<<< HEAD
       resize: none; /*リサイズの無効化*/
     overflow-y: auto; /* 高さが制限された場合に縦方向のスクロールバーを表示 */
     word-wrap: break-word; /* フォームの幅を超える場合に文字列を折り返す */
+=======
+    resize: none; /*リサイズの無効化*/
+  overflow-y: auto; /* 高さが制限された場合に縦方向のスクロールバーを表示 */
+  word-wrap: break-word; /* フォームの幅を超える場合に文字列を折り返す */
+>>>>>>> b1a2be40b368cb11c062626d12e3386a0d71eb4e
   }
   
   .message-button {
